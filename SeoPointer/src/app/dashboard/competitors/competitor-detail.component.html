@@ -1,0 +1,56 @@
+<div *ngIf="modelForm" class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header" data-background-color="red">
+                <h4 class="title">Edit Competitor</h4>
+                <p class="category">here you can edit your competitor</p>
+            </div>
+            <div class="card-content">
+                <form [formGroup]="modelForm" (ngSubmit)="onSubmit()">
+           
+                    <div class="row">
+                        <div class="col-md-6">
+               
+                            <div class="form-group form-black label-floating">
+                                <div class="form-group form-black label-floating is-empty">
+                                    <label class="control-label">Choose project</label>
+                                    <select2 id="datatSelect"  [value]="model.ProjectId" (valueChanged)="changed($event)" [data]="projects"></select2>
+                                </div>
+                            </div>
+                            <div *ngIf="formErrors.ProjectId" class="alert alert-danger">
+                                {{ formErrors.ProjectId }}
+                            </div>
+                  
+                            <div class="form-group form-black label-floating" [ngClass]="{ 'is-empty': model.Name != null && model.Name.Length == 0 }">
+                                <label class="control-label">Name</label>
+
+                                <input formControlName="Name" type="text" class="form-control" required >
+                            
+                            </div>
+                            <div *ngIf="formErrors.Name" class="alert alert-danger">
+                                {{ formErrors.Name }}
+                            </div>
+               
+                            <div class="form-group form-black label-floating is-empty" [ngClass]="{ 'is-empty': model.Url != null && model.Url.Length == 0 }">
+                                <label class="control-label">Url</label>
+                               
+                                <input formControlName="Url" type="text" class="form-control" required>
+                            </div>
+                            <div *ngIf="formErrors.Url" class="alert alert-danger">
+                                {{ formErrors.Url }}
+                            </div>
+
+                        </div>
+                    </div>
+     
+  
+                    <p class="btn btn-danger pull-right" (click)="goBack()">Back</p>
+                    <button type="submit" class="btn btn-success pull-right" [disabled]="!modelForm.valid">Submit</button>
+
+
+                    <div class="clearfix"></div>
+                </form>        
+            </div>
+        </div>
+    </div>
+</div>

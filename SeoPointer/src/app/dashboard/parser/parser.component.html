@@ -1,0 +1,237 @@
+﻿<div class="main-content">
+    <div class="container-fluid">
+        <div *ngIf="competitors" class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header" data-background-color="red">
+                        <h4 class="title">Edit Competitor</h4>
+                        <p class="category">here you can edit your competitor</p>
+                    </div>
+                    <div class="card-content">
+               
+                        <div *ngIf="competitors.length == 0">
+                            Yu don't have competitirs right now. You can create them <a routerLink="/competitor">here</a>.
+                        </div>
+                        <div *ngIf="competitors.length > 0">
+                            <div class="row"> 
+             
+                                    <div class="form-group form-black">
+                                        <label class="control-label">Choose competitor</label>
+                                        <select2 id="datatSelect" [value]="0" (valueChanged)="changed($event)" [data]="competitors"></select2>
+                                    </div>
+        
+                            </div>
+                            <div *ngIf="modelForm">
+                                <form [formGroup]="modelForm" (ngSubmit)="onSubmit()">
+
+                 
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <div class="form-group form-black label-floating is-empty" [ngClass]="{ 'is-empty': modelForm.TestUrl != null && modelForm.TestUrl.Length == 0 }">
+                                                <label class="control-label">Test Url</label>
+
+                                                <input formControlName="TestUrl" type="text" class="form-control">
+                                            </div>
+                                            <div *ngIf="formErrors.TestUrl" class="alert alert-danger">
+                                                {{ formErrors.TestUrl }}
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <button class="btn btn-info" [disabled]="!modelForm.valid">Refresh</button>
+                                        </div>
+                                       
+
+                                    </div>
+
+
+
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <div class="form-group form-black label-floating is-empty" [ngClass]="{ 'is-empty': modelForm.Price != null && modelForm.Price.Length == 0 }">
+                                                <label class="control-label">Price</label>
+
+                                                <input formControlName="Price" type="text" class="form-control">
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="radio">
+                                                <label>
+                                                    <input formControlName="ActiveField" (change)="ActiveFieldChange(modelForm.value.PriceXPath)" value="Price" type="radio">
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group form-black label-floating is-empty" [ngClass]="{ 'is-empty': modelForm.EventPrice != null && modelForm.EventPrice.Length == 0 }">
+                                                <input formControlName="PriceXPath" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <div class="form-group form-black label-floating is-empty" [ngClass]="{ 'is-empty': modelForm.EventPrice != null && modelForm.EventPrice.Length == 0 }">
+                                                <label class="control-label">Event Price</label>
+
+                                                <input formControlName="EventPrice" type="text" class="form-control">                               
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="radio">
+                                                <label>
+                                                    <input formControlName="ActiveField" (change)="ActiveFieldChange(modelForm.value.EventPriceXPath)"  value="EventPrice" type="radio">
+                                                </label>
+                                            </div>
+                                        </div>
+                         
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group form-black label-floating is-empty" [ngClass]="{ 'is-empty': modelForm.EventPrice != null && modelForm.EventPrice.Length == 0 }">
+                                                <input formControlName="EventPriceXPath"  type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <div class="form-group form-black label-floating is-empty" [ngClass]="{ 'is-empty': modelForm.Title != null && modelForm.Title.Length == 0 }">
+                                                <label class="control-label">Title</label>
+                                                <input formControlName="Title" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="radio">
+                                                <label>
+                                                    <input formControlName="ActiveField" (change)="ActiveFieldChange(modelForm.value.TitleXPath)" value="Title" type="radio">
+                                                </label>
+                                            </div>
+                                        </div>
+                                 
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group form-black label-floating is-empty" [ngClass]="{ 'is-empty': modelForm.EventPrice != null && modelForm.EventPrice.Length == 0 }">
+                                                <input formControlName="TitleXPath" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-success pull-right" [disabled]="!modelForm.valid">Submit</button>
+
+
+                                    <div class="clearfix"></div>
+                                </form>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="modelForm" class="row">
+            <iframe style="height: 1000px; width: 100%" [src]="url" frameborder="0"></iframe>
+        </div>
+    </div>
+</div>
+   <!--<div class="main-content">
+
+
+
+
+
+
+
+        <div class="main-content">
+
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header" data-background-color="red">
+                                <h4 class="title">Edit Site Parser</h4>
+                                <p class="category">Select elements wich will be parsed</p>
+                            </div>
+                            <div class="card-content">
+                                <form>
+                                    <div class="row">
+
+                                        <div class="form-group form-black label-floating">
+                                            <div class="form-group form-black label-floating is-empty">
+                                                <label class="control-label">Choose project</label>
+                                                <select2 id="datatSelect" [value]="model.ProjectId" (valueChanged)="changed($event)" [data]="competitors></select2>
+                                            </div>
+                                        </div>
+                                        <div *ngIf="formErrors.ProjectId" class="alert alert-danger">
+
+                                        </div>
+
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="optionsCheckboxes" checked>
+                                                </label>
+                                            </div>
+                                            <div class="form-group form-black label-floating is-empty">
+                                                <label class="control-label">Цена</label>
+                                                <input type="text" class="form-control" disabled>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-5">
+                                            <select2 [data]="regexpService.getRegexpList()"></select2>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="optionsCheckboxes" checked>
+                                                </label>
+                                            </div>
+                                            <div class="form-group form-black label-floating is-empty">
+                                                <label class="control-label">Акция</label>
+                                                <input type="text" class="form-control" disabled>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-5">
+                                            <select2 [data]="regexpService.getRegexpList()"></select2>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="optionsCheckboxes" checked>
+                                                </label>
+                                            </div>
+                                            <div class="form-group form-black label-floating is-empty">
+                                                <label class="control-label">Название</label>
+                                                <input type="text" class="form-control" disabled>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <button type="submit" class="btn btn-danger pull-right">Update Profile</button>
+                                    <div class="clearfix"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                 <iframe style="height: 1000px; width: 100%" src="../assets/sturt_up/iframe/test1.html" frameborder="0"></iframe>
+                </div>
+            </div>
+
+        </div>-->

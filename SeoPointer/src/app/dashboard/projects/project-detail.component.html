@@ -1,0 +1,70 @@
+<div *ngIf="projectForm" class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header" data-background-color="red">
+                <h4 class="title">Edit Project</h4>
+                <p class="category">here you can edit your project</p>
+            </div>
+            <div class="card-content">
+                <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+                    <input formControlName="Id" type="hidden">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group form-black label-floating" [ngClass]="{ 'is-empty': project.Name != null && project.Name.Length == 0 }">
+                                <label class="control-label">Name</label>
+
+                                <input formControlName="Name" type="text" class="form-control" required >
+                            
+                            </div>
+                            <div *ngIf="formErrors.Name" class="alert alert-danger">
+                                {{ formErrors.Name }}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-black label-floating is-empty" [ngClass]="{ 'is-empty': project.Url != null && project.Url.Length == 0 }">
+                                <label class="control-label">Url</label>
+                               
+                                <input formControlName="Url" type="text" class="form-control" required>
+                            </div>
+                            <div *ngIf="formErrors.Url" class="alert alert-danger">
+                                {{ formErrors.Url }}
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group form-black label-floating" [ngClass]="{ 'is-empty':project.Contacts != null &&  project.Contacts.Length == 0 }">
+                                <label class="control-label">Contacts</label>
+                                
+                                <input formControlName="Contacts" type="text" class="form-control">
+                            
+                            </div>
+                            <div *ngIf="formErrors.Contacts" class="alert alert-danger">
+                                {{ formErrors.Contacts }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Comment</label>
+                                <div class="form-group form-black label-floating is-empty" [ngClass]="{ 'is-empty': project.Info != null && project.Name.Info == 0 }">
+                                    <label class="control-label">Some project's information</label>
+                                    
+                                    <textarea formControlName="Info" class="form-control" rows="5"></textarea>
+                               
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="btn btn-danger pull-right" (click)="goBack()">Back</p>
+                    <button type="submit" class="btn btn-success pull-right" [disabled]="!projectForm.valid">Submit</button>
+
+
+                    <div class="clearfix"></div>
+                </form>        
+            </div>
+        </div>
+    </div>
+</div>

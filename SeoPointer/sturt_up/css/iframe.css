@@ -1,0 +1,12 @@
+﻿.XpathWorker_hovered {
+    background-color: aquamarine;
+}
+
+.XpathWorker_selected {
+    background-color: blue;
+    border: 1px solid blue;
+}
+.XpathWorker_active {
+    background-color: green;
+    border: 1px solid blue;
+}

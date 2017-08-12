@@ -1,0 +1,56 @@
+﻿<modal-popup [(visible)]="showDialog" title="Confirm">
+    Are you Sure?
+    <hr>
+    <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="confirmDelete()">Yes</button>
+    <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="showDialog = false">No</button>
+
+</modal-popup>
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header" data-background-color="red">
+                        <h4 class="title">Your projects</h4>
+                        <p class="category">Here you can add/edit your projects</p>
+                    </div>
+                    <div class="card-content table-responsive"> 
+                        <div class="col-md-3  col-md-offset-9">
+                            <button class="btn btn-info btn-block"  routerLink="./add">Add new project<div class="ripple-container"></div></button>
+                        </div>
+                  
+                        <table class="table">
+                            <thead class="text-danger">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Url</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let project of projects">
+                                    <td>{{project.Name}}</td>
+                                    <td>{{project.Url}}</td>
+                                    <td>{{project.Status}}</td>
+                                    <td class="td-actions text-right">
+                                        <a  [routerLink]="['/project', project.Id]" class="btn btn-primary btn-simple btn-xs"  title="Edit Task" >
+                                            <i class="material-icons">edit</i>
+                                            <div class="ripple-container"></div>
+                                        </a>
+                                        <a  (click)="showDialog=true; objDelete=project" class="btn btn-danger btn-simple btn-xs" title="Remove" >
+                                            <i class="material-icons">close</i>
+                                            <div class="ripple-container"></div>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
