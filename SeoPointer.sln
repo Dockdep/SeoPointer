@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeoSoft.Web", "SeoPointer\SeoSoft.Web.csproj", "{324EA478-E50F-49D7-B0E6-92E19BB425E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeoSoft.Web", "SeoPointer\SeoSoft.Web.csproj", "{324EA478-E50F-49D7-B0E6-92E19BB425E5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SeoSoft", "SeoSoft", "{8336FE0E-1CBA-4CEA-8EC6-769B8157766C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeoSoft.Data", "Data\SeoSoft.Data.csproj", "{D5A4311B-4CAE-4534-B969-06A01DDD4E76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeoSoft.Data", "Data\SeoSoft.Data.csproj", "{D5A4311B-4CAE-4534-B969-06A01DDD4E76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeoSoft.Api", "SeoSoft.Api\SeoSoft.Api.csproj", "{FE480173-EA90-422B-9BF6-FAEBBD8EFD68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeoSoft.Api", "SeoSoft.Api\SeoSoft.Api.csproj", "{FE480173-EA90-422B-9BF6-FAEBBD8EFD68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeoSoft.Parser", "SeoSoft.Parser\SeoSoft.Parser.csproj", "{DCA56143-2C61-4682-9189-0050D93E3491}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{FE480173-EA90-422B-9BF6-FAEBBD8EFD68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE480173-EA90-422B-9BF6-FAEBBD8EFD68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE480173-EA90-422B-9BF6-FAEBBD8EFD68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCA56143-2C61-4682-9189-0050D93E3491}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCA56143-2C61-4682-9189-0050D93E3491}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCA56143-2C61-4682-9189-0050D93E3491}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCA56143-2C61-4682-9189-0050D93E3491}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -37,5 +43,6 @@ Global
 		{324EA478-E50F-49D7-B0E6-92E19BB425E5} = {8336FE0E-1CBA-4CEA-8EC6-769B8157766C}
 		{D5A4311B-4CAE-4534-B969-06A01DDD4E76} = {8336FE0E-1CBA-4CEA-8EC6-769B8157766C}
 		{FE480173-EA90-422B-9BF6-FAEBBD8EFD68} = {8336FE0E-1CBA-4CEA-8EC6-769B8157766C}
+		{DCA56143-2C61-4682-9189-0050D93E3491} = {8336FE0E-1CBA-4CEA-8EC6-769B8157766C}
 	EndGlobalSection
 EndGlobal
