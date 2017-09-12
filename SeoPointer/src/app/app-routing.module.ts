@@ -7,6 +7,7 @@ import { DashboardProductComponent } from './dashboard-product/dashboard-product
 import { ProductOverviewComponent } from './dashboard-product/overview/overview.component';
 import { ProductStatsComponent } from './dashboard-product/stats/stats.component';
 import { ProductFeaturesComponent } from './dashboard-product/features/features.component';
+import { DashboardModule } from './dashboard/dashboard.module';
 import { FeaturesFormComponent } from './dashboard-product/features/form/form.component';
 import { LogsComponent } from './logs/logs.component';
 import { DetailComponent } from './detail/detail.component';
@@ -25,11 +26,15 @@ const routes: Routes = [
             {
 				component: DefaultComponent,
                 path: '',
-            },
+			},
             {
                 path: 'product',
                 component: DashboardProductComponent,
-                children: [
+				children: [
+					{
+						path: 'dashboard',
+						loadChildren: './dashboard/dashboard.module#DashboardModule'
+					},
                     {
                         path: '',
                         component: ProductOverviewComponent

@@ -5,12 +5,12 @@ import { IframeComponent } from './parser/iframe.component';
 export const MODULE_ROUTES: Route[] =[
     { path: 'parser', component: ParserComponent },
     {
-        path: 'project',
-        loadChildren: 'app/dashboard/projects/project.module#ProjectModule'
+        path: '',
+        loadChildren: './projects/project.module#ProjectModule'
     },
     {
         path: 'competitor',
-        loadChildren: 'app/dashboard/competitors/competitor.module#CompetitorModule'
+        loadChildren: './competitors/competitor.module#CompetitorModule'
     },
     { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
 ]

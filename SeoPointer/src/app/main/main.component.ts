@@ -1,35 +1,43 @@
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'qs-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss'],
+	selector: 'qs-main',
+	templateUrl: './main.component.html',
+	styleUrls: ['./main.component.scss'],
 })
 export class MainComponent {
 
-  routes: Object[] = [{
-      title: 'Dashboard',
-      route: '/',
-      icon: 'dashboard',
-    }, {
-      title: 'Product Dashboard',
-      route: '/product',
-      icon: 'view_quilt',
-    }, {
-      title: 'Product Logs',
-      route: '/logs',
-      icon: 'receipt',
-    }, {
-      title: 'Manage Users',
-      route: '/users',
-      icon: 'people',
-    },
-  ];
+	routes: Object[] = [
 
-  constructor(private _router: Router) {}
+		{
+			title: 'Dashboard Product',
+			route: '/',
+			icon: 'dashboard',
+		},
+		{
+			title: 'Dashboard',
+			route: '/product/dashboard',
+			icon: 'dashboard',
+		},
+		{
+			title: 'Product Dashboard',
+			route: '/product',
+			icon: 'view_quilt',
+		}, {
+			title: 'Product Logs',
+			route: '/logs',
+			icon: 'receipt',
+		}, {
+			title: 'Manage Users',
+			route: '/users',
+			icon: 'people',
+		},
+	];
 
-  logout(): void {
-    this._router.navigate(['/login']);
-  }
+	constructor(private _router: Router) { }
+
+	logout(): void {
+		this._router.navigate(['/login']);
+	}
 }

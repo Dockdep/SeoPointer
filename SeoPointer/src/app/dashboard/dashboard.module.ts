@@ -1,7 +1,6 @@
 ﻿import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MODULE_COMPONENTS, MODULE_ROUTES } from './dashboard.routes';
@@ -11,7 +10,6 @@ import { CommonModule } from '@angular/common';
     imports: [
         RouterModule.forChild(MODULE_ROUTES),
         FormsModule,
-        BrowserModule,
         HttpModule,
         Select2Module,
         CommonModule,
